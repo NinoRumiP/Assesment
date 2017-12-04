@@ -16,11 +16,11 @@
 <script>
 $(document).ready(function(){
     $("button").click(function(){
+    	var div = document.getElementById('output');
+    	div.innerHTML = '<br />';
         $.get("words/" + document.getElementById('searchTerm').value + "/" + document.getElementById('resultSize').value, function(data, status){
             for(var i = 0; i < data.words.length; i++) {
     			var word = data.words[i];
-
-    			var div = document.getElementById('output');
 
 				div.innerHTML += word + '<br />';
 			}

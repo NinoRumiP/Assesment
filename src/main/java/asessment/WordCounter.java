@@ -20,6 +20,7 @@ public class WordCounter {
 	}
 
 	private void countSentence(String title) {
+		title = title.replaceAll("\\p{P}", "");
 		for(String word:title.split(" ")){
 			countList.put(word, countList.getOrDefault(word, 0) + 1);
 		}
@@ -27,6 +28,7 @@ public class WordCounter {
 
 	public WordCount getResult(Integer resultSize, String searchTerm) {
 		List<String> words = countList.entrySet().stream()
+			.filter(entry -> !entry.getKey().equalsIgnoreCase(searchTerm))
 			.sorted((entry1, entry2)-> entry2.getValue().compareTo(entry1.getValue()))
 			.limit(resultSize)
 			.map(entry -> entry.getKey())

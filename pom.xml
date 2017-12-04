@@ -1,12 +1,12 @@
 <project>
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.example</groupId>
-	<artifactId>demo</artifactId>
+	<groupId>ch.assesment</groupId>
+	<artifactId>assesment</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
 	<properties>
 		<java.version>1.8</java.version>
-		<docker.image.prefix>springio</docker.image.prefix>
+		<docker.image.prefix>assesment</docker.image.prefix>
 	</properties>
 
 	<parent>

@@ -17,11 +17,12 @@ import asessment.rest.accessor.AlgoliaServiceAccessor;
 @RequestMapping("/words/{searchTerm}/{resultSize}")
 class BookmarkRestController {
 
+	
 	private AlgoliaServiceAccessor algoliaServiceAccessor;
 
 	@Autowired
-	BookmarkRestController() {
-
+	BookmarkRestController(AlgoliaServiceAccessor algoliaServiceAccessor) {
+		this.algoliaServiceAccessor = algoliaServiceAccessor;
 	}
 
 	@RequestMapping(method = RequestMethod.GET)

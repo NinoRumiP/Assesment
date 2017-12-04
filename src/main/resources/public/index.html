@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<form>
+  Search Term:<br>
+  <input type="text" id="searchTerm" name="searchTerm" value="apple">
+  <br>
+  Number of Results:<br>
+  <input type="text" id="resultSize" name="resultSize" value="10">
+  <br><br>
+</form> 
+ <button>Search</button> 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $.get("words/" + document.getElementById('searchTerm').value + "/" + document.getElementById('resultSize').value, function(data, status){
+            for(var i = 0; i < data.words.length; i++) {
+    			var word = data.words[i];
+
+    			var div = document.getElementById('output');
+
+				div.innerHTML += word + '<br />';
+			}
+            
+        });
+    });
+});
+</script>
+<div id="output"></div>
+
+</body>
+</html>

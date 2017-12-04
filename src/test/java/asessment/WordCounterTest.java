@@ -1,4 +1,4 @@
-package asessment.rest.accessor;
+package asessment;
 
 import static org.junit.Assert.*;
 
@@ -17,7 +17,8 @@ public class WordCounterTest {
 		AlgoliaSerachResult asr = new AlgoliaSerachResult();
 		asr.setHits(Arrays.asList(new AlgoliaSingleResult("Test word count easy"), new AlgoliaSingleResult("Test word count"), new AlgoliaSingleResult("Test word"), new AlgoliaSingleResult("Test")));
 		WordCounter testee = new  WordCounter();
-		assertEquals(testee.countWords(asr).get("Test"), Integer.valueOf(4));
+		testee.countWords(asr);
+		assertEquals(4, testee.countList.get("Test").getCount());
 	}
 	
 	@Test

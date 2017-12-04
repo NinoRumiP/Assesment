@@ -15,13 +15,13 @@ import asessment.rest.accessor.AlgoliaServiceAccessor;
 
 @RestController
 @RequestMapping("/words/{searchTerm}/{resultSize}")
-class BookmarkRestController {
+class WordCountRestController {
 
 	
 	private AlgoliaServiceAccessor algoliaServiceAccessor;
 
 	@Autowired
-	BookmarkRestController(AlgoliaServiceAccessor algoliaServiceAccessor) {
+	WordCountRestController(AlgoliaServiceAccessor algoliaServiceAccessor) {
 		this.algoliaServiceAccessor = algoliaServiceAccessor;
 	}
 

@@ -14,5 +14,4 @@ public class AlgoliaServiceAccessorTest {
 		AlgoliaSerachResult result = testee.getFirstPage("apple");
 		assertTrue(result.getHits().size() > 0);
 	}
-
 }
